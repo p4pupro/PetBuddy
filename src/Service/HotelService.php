@@ -108,7 +108,7 @@ class HotelService
         {
             if($hotel->getEnable())
             {
-                
+
             }
         }
 

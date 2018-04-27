@@ -23,6 +23,12 @@
   * Configure the driver (mysql) and
     server_version (5.7) in _config/packages/doctrine.yaml_
 
+ __Architecture__
+ 
+  * Use MVC.
+  * Generation and injection of a "HotelService" service, to follow the MicroServices standard. 
+    --> _services.yaml_
+
 
  __How to test?__
 
@@ -31,10 +37,6 @@
   * Run php bin/phpunit
 
 
- __Architecture__
- 
-  * Use of the MVC.
-  * Generation and injection of a "HotelService" service, to follow the MicroServices standard. --> _services.yaml_
 
 ###Include:
 *  friendsofsymfony/rest-bundle (>=2.2)
