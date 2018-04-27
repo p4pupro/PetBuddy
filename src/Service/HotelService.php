@@ -12,6 +12,7 @@ namespace App\Service;
 use App\Entity\Hotels;
 use App\Entity\ReservedRooms;
 use App\Entity\Room;
+use App\Entity\OccupiedRooms;
 use Doctrine\ORM\EntityManager;
 use function Sodium\add;
 
@@ -40,6 +41,9 @@ class HotelService
         $rooms = $this->entityManager->getRepository(Room::class)
             ->findAll();
 
+        $occupiedRooms = $this->entityManager->getRepository(OccupiedRooms::class)
+            ->findAll();
+
 
 
         $totalRooms = count($totalReservedRooms);
@@ -47,11 +51,11 @@ class HotelService
         $data = [];
 
         foreach ($hotels as $hotel) {
-            $occupiedRooms = [];
+            $habOcupadas = [];
 
-                foreach ($rooms as $occupiedRoom) {
+                foreach ($occupiedRooms as $occupiedRoom) {
 
-                    $occupiedRooms [] = [
+                    $habOcupadas [] = [
                         'petId' => $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getId() : null,
                         'petType' =>  $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getType()->getName() : null,
                         'petName' => $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getName() : null
@@ -63,7 +67,7 @@ class HotelService
                     'ReservedRooms' => $totalRooms,
                     'active' => $hotel->getEnable(),
                     'maxRooms' => $hotel->getMaxRooms(),
-                    'rooms' => $occupiedRooms
+                    'rooms' => $habOcupadas
                 ];
 
         }

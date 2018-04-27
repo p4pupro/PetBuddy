@@ -28,12 +28,6 @@ class Room
     private $number;
 
 
-    /**
-     * @var $occupiedRoom
-     * @ORM\Column(name="occupied_room", type="integer")
-     */
-    private $occupiedRoom;
-
 
     /**
      * @var $hotel
@@ -41,14 +35,6 @@ class Room
      * @ORM\JoinColumn(name="hotel_id", referencedColumnName="id")
      */
     private $hotel;
-
-
-    /**
-     * @var $pet
-     * @ORM\OneToOne(targetEntity="App\Entity\Pets")
-     * @ORM\JoinColumn(name="pet_id", referencedColumnName="id")
-     */
-    private $pet;
 
 
 
@@ -100,37 +86,7 @@ class Room
         $this->hotel = $hotel;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getOccupiedRoom()
-    {
-        return $this->occupiedRoom;
-    }
 
-    /**
-     * @param mixed $occupiedRoom
-     */
-    public function setOccupiedRoom($occupiedRoom): void
-    {
-        $this->occupiedRoom = $occupiedRoom;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPet()
-    {
-        return $this->pet;
-    }
-
-    /**
-     * @param mixed $pet
-     */
-    public function setPet($pet): void
-    {
-        $this->pet = $pet;
-    }
 
 
 
