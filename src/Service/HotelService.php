@@ -103,6 +103,23 @@ class HotelService
         $rooms = $this->entityManager->getRepository(Room::class)
             ->findAll();
 
+
+        foreach ($hotels as $hotel)
+        {
+            if($hotel->getEnable())
+            {
+                
+            }
+        }
+
     }
+
+
+
+    public function CatRuleDogs()
+    {
+        return null;
+    }
+
 
 }

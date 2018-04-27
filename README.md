@@ -31,6 +31,11 @@
   * Run php bin/phpunit
 
 
+ __Architecture__
+ 
+  * Use of the MVC.
+  * Generation and injection of a "HotelService" service, to follow the MicroServices standard. --> _services.yaml_
+
 ###Include:
 *  friendsofsymfony/rest-bundle (>=2.2)
 *  jms/serializer-bundle (>=2.0)
