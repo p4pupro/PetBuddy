@@ -1,7 +1,7 @@
-# Symfony v.4 Rest Skeleton
+# Symfony v.4 PetBuddy
 
+# Author: Domingo Pérez <domingoperezguerrero@gmail.com>
 
- __What's next?__
 
 
   * Run your application:
