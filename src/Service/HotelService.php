@@ -13,6 +13,7 @@ use App\Entity\Hotels;
 use App\Entity\ReservedRooms;
 use App\Entity\Room;
 use Doctrine\ORM\EntityManager;
+use function Sodium\add;
 
 class HotelService
 {
@@ -48,12 +49,11 @@ class HotelService
         foreach ($hotels as $hotel) {
             $occupiedRooms = [];
 
-
                 foreach ($rooms as $occupiedRoom) {
 
                     $occupiedRooms [] = [
                         'petId' => $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getId() : null,
-                        'petType' =>  $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getType()->getId() : null,
+                        'petType' =>  $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getType()->getName() : null,
                         'petName' => $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getName() : null
                     ];
 
@@ -111,6 +111,8 @@ class HotelService
 
             }
         }
+
+
 
     }
 
