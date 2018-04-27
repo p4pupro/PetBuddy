@@ -12,6 +12,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
+ * @author Domingo Perez <domingoperezgerrero@gmail.com>
+ */
+
+/**
  * @Rest\Route("/api", name="api_")
  */
 class ExampleController extends FOSRestController

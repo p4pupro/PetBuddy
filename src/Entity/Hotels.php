@@ -4,6 +4,12 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+
+/**
+ * @author Domingo Perez <domingoperezgerrero@gmail.com>
+ */
+
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\HotelsRepository")
  */

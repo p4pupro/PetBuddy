@@ -40,21 +40,18 @@ class HotelService
             ->findAll();
 
 
-        $counter = 0;
-         foreach ($totalReservedRooms as $totalReservedRoom)
-        {
-            $counter += 1;
-        }
 
+        $totalRooms = count($totalReservedRooms);
 
         $data = [];
 
         foreach ($hotels as $hotel) {
             $occupiedRooms = [];
 
+
                 foreach ($rooms as $occupiedRoom) {
 
-                    $occupiedRooms = [
+                    $occupiedRooms [] = [
                         'petId' => $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getId() : null,
                         'petType' =>  $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getType()->getId() : null,
                         'petName' => $occupiedRoom->getPet() ? $occupiedRoom->getPet()->getName() : null
@@ -62,18 +59,15 @@ class HotelService
 
                 }
 
-            $data[] = [
-                [
-
+            $data [] = [
+                    'ReservedRooms' => $totalRooms,
                     'active' => $hotel->getEnable(),
                     'maxRooms' => $hotel->getMaxRooms(),
                     'rooms' => $occupiedRooms
-                ]
-            ];
-
+                ];
 
         }
-        
+
         return $data;
     }
 
