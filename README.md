@@ -1,6 +1,7 @@
 # Symfony v.4 PetBuddy
 
-# Author: Domingo Pérez < <domingoperezguerrero@gmail.com> >
+# Author: Domingo Pérez 
+# Email: <domingoperezguerrero@gmail.com> 
 
 
 
